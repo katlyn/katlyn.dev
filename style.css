@@ -50,7 +50,7 @@ header .avatar {
     border-radius: 100%;
     width: 4rem;
     height: 4rem;
-    background-image: url('https://this-is-a-l.ink/with/gord.gif');
+    background-image: url('./avatar.png');
     background-size: cover;
     background-position: center;
 }
