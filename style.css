@@ -1,0 +1,163 @@
+@import url("https://use.typekit.net/vvh2raw.css");
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --text: #F6F7EB;
+    --body: #4F4F4F;
+    --dark: #333333;
+    --link: #69EBD0;
+
+    --uaf-blue: #1E5C8D;
+    --boondocks-red: #AF3439;
+    --ny-subs-blue: #3F88C5;
+
+    --music-purple: #555467;
+    --owo-purble: #7494EA;
+    --hoardbot-green: #44BBA4;
+}
+
+html {
+    background-color: var(--body);
+    color: var(--text);
+
+    font-family: bilo,sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+header {
+    background-color: var(--dark);
+    padding: 30px 20px 35px;
+
+    /* Dashed border */
+    background-image: linear-gradient(to right, var(--text) 71.4285714%, transparent 0%);
+    background-position: bottom;
+    background-size: 7px 1px;
+    background-repeat: repeat-x;
+
+    display: flex;
+    align-items: center;
+
+    position: sticky;
+    top: 0;
+}
+
+header .avatar {
+    border-radius: 100%;
+    width: 4rem;
+    height: 4rem;
+    background-image: url('https://this-is-a-l.ink/with/gord.gif');
+    background-size: cover;
+    background-position: center;
+}
+
+header .title {
+    margin-left: 10px;
+}
+
+header h2 {
+    font-size: 17px;
+}
+
+main {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 600px;
+    margin: 0 20px;
+}
+
+.section {
+    background: var(--dark);
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 3px;
+    display: grid;
+    gap: 20px;
+}
+
+.card {
+    padding: 20px;
+}
+
+a.card {
+    color: white;
+    text-decoration: none;
+    transition: filter 0.1s ease;
+}
+
+a.card:hover {
+    filter: brightness(1.15);
+    z-index: 0;
+}
+
+.card.music {
+    background-color: var(--music-purple);
+}
+
+.card.owo {
+    background-color: var(--owo-purble);
+}
+
+.card.hoardbot {
+    background-color: var(--hoardbot-green);
+}
+
+.card.uaf {
+    background-color: var(--uaf-blue);
+}
+
+.card.boondocks {
+    background-color: var(--boondocks-red);
+}
+
+.card.subs {
+    background-color: var(--ny-subs-blue);
+}
+
+
+h1 {
+    font-size: 30px;
+}
+
+h2 {
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+p {
+    font-size: 17px;
+}
+
+a {
+    color: var(--link);
+}
+
+
+h1, h2, h3, h4, h5 {
+    font-weight: normal;
+}
+
+
+@media screen and (min-width: 1400px) {
+    main {
+        flex-direction: row;
+        align-items: initial;
+    }
+
+    .column {
+        margin: 0 10px;
+    }
+}
