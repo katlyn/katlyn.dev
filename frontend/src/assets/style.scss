@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend&display=swap');
+@import url("https://cdn.jsdelivr.net/gh/jgthms/minireset.css@master/minireset.min.css");
+
+:root {
+  --peach: #efc4df;
+  --strawberry: #e5a0a0;
+  --cantaloupe: #f9b28c;
+  --banana: #f0cf9f;
+  --watermelon: #b0d2b0;
+  --mint: #95fecc;
+  --water: #80bbdb;
+  --ube: #a99dbd;
+  --tapioca: #c1c1c1;
+
+  --dark: #111;
+  --light: #EEE;
+
+  --accent: var(--watermelon);
+
+  color: var(--dark);
+  background-color: var(--light);
+  font-family: 'Lexend', sans-serif;
+}
+
+body {
+  min-height: 100vh;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal;
+}
+
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  margin: 4em;
+
+  width: max-content;
+
+  h1 {
+    font-size: 3em;
+    border-bottom: var(--accent) solid 3px;
+    padding-bottom: 0.15em;
+    margin-bottom: 0.2em;
+  }
+}
+
+nav {
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  margin: 4em 2em;
+
+  text-align: right;
+
+  ul {
+    list-style: none;
+    
+    li {
+      margin-bottom: 0.25em;
+
+      a {
+        color: inherit;
+        text-decoration: var(--accent) underline 2px;
+        transition: text-decoration 0.2s ease-in-out;
+
+        &:hover {
+          text-decoration: currentColor underline 2px;
+        }
+      }
+    }
+  }
+}
+
+#now-playing {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+
+  margin: 2em;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    color: var(--light);
+    background-color: var(--dark);
+  }
+}
+
+@media screen and (max-width: 700px) {
+  :root {
+    font-size: 1.2em;
+  }
+
+  header {
+    margin: 4em auto;
+    position: relative;
+
+    h1 {
+      font-size: 2em;
+    }
+  }
+
+  nav {
+    position: relative;
+    text-align: center;
+
+    ul li {
+      margin-bottom: 0.4em;
+    }
+  }
+}
