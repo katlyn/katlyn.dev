@@ -32,4 +32,4 @@ jobs:
           context: backend
           push: true
           tags: |
-            ghcr.io/theGordHoard/katlyn.dev-backend:latest
+            ghcr.io/thegordhoard/katlyn.dev-backend:latest
