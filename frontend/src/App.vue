@@ -53,4 +53,10 @@ export default {
     font-size: 0.8em;
   }
 }
+
+@media screen and (max-width: 700px) {
+  #now-playing {
+    align-items: center;
+  }
+}
 </style>
