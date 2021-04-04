@@ -1,7 +1,7 @@
 FROM node:15-alpine
 WORKDIR /usr/build
 COPY package.json package-lock.json /usr/build/
-RUN npm install
+RUN npm ci
 COPY . /usr/build/
 RUN npm run build
 
