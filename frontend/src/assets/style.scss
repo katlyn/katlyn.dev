@@ -38,12 +38,26 @@ header {
   margin: 4em;
 
   width: max-content;
+  display: grid;
+
+  grid-template-areas: "a b" "a c";
+  gap: 0 1em;
+
+  img {
+    // transform: scaleX(-1);
+    grid-area: a;
+    height: 7em;
+  }
 
   h1 {
     font-size: 3em;
     border-bottom: var(--accent) solid 3px;
     padding-bottom: 0.15em;
     margin-bottom: 0.2em;
+    grid-area: b;
+  }
+  h2 {
+    grid-area: c;
   }
 }
 
