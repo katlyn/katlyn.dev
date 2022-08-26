@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#f9b28c">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#f9b28c">
+
+    <meta property="og:description" content="hi. i do code and stuff.">
+    <meta property="og:title" content="katlyn lorimer">
+
+    <meta name="author" content="Katlyn Lorimer">
+    <meta name="description" content="hi. i do code and stuff.">
+    <meta name="theme-color" content="#b0d2b0">
+
+    <link rel="stylesheet" href="/style.css">
+
+    <title>Katlyn Lorimer</title>
+  </head>
+  <body style="--accent: var(--<%= color %>)">
+    <header>
+      <img src="/polyfox.svg" alt="A low poly fox">
+      <h1>katlyn lorimer</h1>
+      <h2>hi. i do code and stuff.</h2>
+    </header>
+    <nav>
+      <ul>
+        <li><a href="https://blog.katlyn.dev/">blog</a></li>
+        <li><a href="https://wiki.katlyn.dev/">wiki</a></li>
+        <li><a href="https://github.com/katlyn/">github</a></li>
+        <!-- <li><a href="/resume.pdf">resume</a></li> -->
+      </ul>
+    </nav>
+    <section id="now-playing">
+      <div class="bars">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <div class="smol">
+        <% if (current) { %>
+          now listening to
+        <% } else { %>
+          last listened to
+        <% } %>
+      </div>
+      <div><%= track.toLowerCase() %></div>
+      <div>by <%= artist.toLowerCase() %></div>
+    </section>
+    <!-- Cloudflare Web Analytics -->
+    <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "27dbaac591ac48b899c032e4b6c26e7b"}'></script>
+    <!-- End Cloudflare Web Analytics -->
+  </body>
+</html>

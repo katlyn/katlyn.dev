@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "declaration": true,
+    "strict": true,
+    "target": "ES2018",
+    "noImplicitAny": true,
+    "sourceMap": true,
+    "outDir": "dist",
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "typeRoots" : ["./node_modules/@types", "./src/@types"]
+  },
+  "include": [
+    "src",
+    "tests"
+  ],
+  "exclude": [
+    "dist"
+  ]
+}

@@ -1,0 +1,156 @@
+@import url("/lexend/lexend.css");
+@import url("https://cdn.jsdelivr.net/gh/jgthms/minireset.css@master/minireset.min.css");
+:root {
+  --peach: #efc4df;
+  --strawberry: #e5a0a0;
+  --cantaloupe: #f9b28c;
+  --banana: #f0cf9f;
+  --watermelon: #b0d2b0;
+  --mint: #95fecc;
+  --water: #80bbdb;
+  --ube: #a99dbd;
+  --tapioca: #c1c1c1;
+  --dark: #111;
+  --light: #EEE;
+  --accent: var(--watermelon);
+  color: var(--dark);
+  background-color: var(--light);
+  font-family: "Lexend", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal;
+}
+
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 4em;
+  width: max-content;
+  display: grid;
+  grid-template-areas: "a b" "a c";
+  gap: 0 1em;
+}
+header img {
+  grid-area: a;
+  height: 7em;
+}
+header h1 {
+  font-size: 3em;
+  border-bottom: var(--accent) solid 3px;
+  padding-bottom: 0.15em;
+  margin-bottom: 0.2em;
+  grid-area: b;
+}
+header h2 {
+  grid-area: c;
+}
+
+nav {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 4em 2em;
+  text-align: right;
+}
+nav ul {
+  list-style: none;
+}
+nav ul li {
+  margin-bottom: 0.25em;
+}
+nav ul li a {
+  color: inherit;
+  text-decoration: var(--accent) underline 2px;
+  transition: text-decoration 0.2s ease-in-out;
+}
+nav ul li a:hover {
+  text-decoration: currentColor underline 2px;
+}
+
+#now-playing {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin: 2em;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    color: var(--light);
+    background-color: var(--dark);
+  }
+}
+@media screen and (max-width: 700px) {
+  :root {
+    font-size: 1.2em;
+  }
+
+  header {
+    margin: 4em auto;
+    position: relative;
+  }
+  header h1 {
+    font-size: 2em;
+  }
+
+  nav {
+    position: relative;
+    text-align: center;
+  }
+  nav ul li {
+    margin-bottom: 0.4em;
+  }
+
+  #now-playing {
+    left: 0;
+  }
+}
+#now-playing {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+#now-playing > div {
+  margin-top: 0.25em;
+}
+#now-playing .smol {
+  font-size: 0.8em;
+}
+
+@media screen and (max-width: 700px) {
+  #now-playing {
+    align-items: center;
+  }
+}
+.bars {
+  display: flex;
+  align-items: flex-end;
+  height: 20px;
+}
+.bars > div {
+  width: 4px;
+  height: 8px;
+  margin-right: 3px;
+  background-color: var(--accent);
+}
+.bars > div:first-of-type {
+  height: 13px;
+  animation-delay: 0.2s;
+}
+.bars > div:last-of-type {
+  height: 20px;
+  margin-right: 0;
+  animation-delay: 0.5s;
+}
+
+@keyframes rise-fall {
+  to {
+    height: 3px;
+  }
+}
