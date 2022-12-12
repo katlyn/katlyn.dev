@@ -1,19 +1,20 @@
-import { URL } from 'url'
-import env from './env'
+import { URL } from "url"
+
+import env from "./env"
 
 let cached = {
-  artist: 'server starting',
-  track: 'boop beep',
+  artist: "server starting",
+  track: "boop beep",
   current: true
 }
 let cachedDate: ReturnType<typeof Date.now> = 0
 
-const apiUrl = new URL('https://ws.audioscrobbler.com/2.0/')
-apiUrl.searchParams.set('method', 'user.getrecenttracks')
-apiUrl.searchParams.set('user', env.lastfm.username)
-apiUrl.searchParams.set('api_key', env.lastfm.apiKey.reveal())
-apiUrl.searchParams.set('format', 'json')
-apiUrl.searchParams.set('limit', '1')
+const apiUrl = new URL("https://ws.audioscrobbler.com/2.0/")
+apiUrl.searchParams.set("method", "user.getrecenttracks")
+apiUrl.searchParams.set("user", env.lastfm.username)
+apiUrl.searchParams.set("api_key", env.lastfm.apiKey.reveal())
+apiUrl.searchParams.set("format", "json")
+apiUrl.searchParams.set("limit", "1")
 
 export const updateCache = async (): Promise<void> => {
   cachedDate = Date.now()
@@ -22,9 +23,9 @@ export const updateCache = async (): Promise<void> => {
   if (request.ok) {
     const listening = await request.json()
     cached = {
-      artist: listening.recenttracks.track[0].artist['#text'],
+      artist: listening.recenttracks.track[0].artist["#text"],
       track: listening.recenttracks.track[0].name,
-      current: listening.recenttracks.track[0]?.['@attr']?.nowplaying === 'true'
+      current: listening.recenttracks.track[0]?.["@attr"]?.nowplaying === "true"
     }
   } else {
     throw new Error(await request.text())

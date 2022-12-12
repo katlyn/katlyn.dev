@@ -1,16 +1,16 @@
-import { updateCache } from './config/lastFm'
-import build from './server'
+import { updateCache } from "./config/lastFm"
+import build from "./server"
 
 // Initialize Last.fm cache
 updateCache().catch(console.error)
 
 const server = build({
   logger: {
-    level: 'info'
+    level: "info"
   }
 })
 server.listen({
-  host: '0.0.0.0',
+  host: "0.0.0.0",
   port: 80
 }, (err, address) => {
   if (err !== null) {
