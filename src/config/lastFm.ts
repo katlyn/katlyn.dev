@@ -32,13 +32,8 @@ export const updateCache = async (): Promise<void> => {
 }
 
 export const getTrack = async (): Promise<typeof cached> => {
-  if (cachedDate < Date.now() - 60 * 1000) {
-    try {
-      await updateCache()
-    } catch (err) {
-      console.error('Could not update song cache. Last.fm responded with', err)
-    }
-  }
-
   return cached
 }
+
+// Automatically update the cache every 60 seconds
+setInterval(updateCache, 60e3)
