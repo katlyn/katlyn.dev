@@ -1,26 +1,30 @@
-FROM node:18-alpine
+FROM node:20-alpine as base
+ENV PNPM_HOME="/pnpm"
+ENV PATH="$PNPM_HOME:$PATH"
+RUN corepack enable
 WORKDIR /katlyn-dev
 
+FROM base as build
+
 # Install packages
-COPY package*.json tsconfig.json ./
-RUN npm ci
+COPY package.json pnpm-lock.yaml tsconfig.json ./
+RUN pnpm i --frozen-lockfile
 
 # Compile typescript
 COPY ./src ./src
 RUN npm run build
 
 
-FROM node:18-alpine
+FROM base
 EXPOSE 80
-WORKDIR /katlyn-dev
 
 # Install packages
-COPY package*.json tsconfig.json ./
-RUN npm ci --production
+COPY package.json pnpm-lock.yaml tsconfig.json ./
+RUN pnpm i --frozen-lockfile --prod
 
 # Copy over finalized files
 COPY ./public ./public
 COPY ./views ./views
-COPY --from=0 /katlyn-dev/dist /katlyn-dev/dist
+COPY --from=build /katlyn-dev/dist /katlyn-dev/dist
 
-CMD [ "npm", "start" ]
+CMD [ "pnpm", "start" ]
