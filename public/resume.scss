@@ -191,7 +191,9 @@ footer {
     column-gap: 3em;
     column-rule: var(--accent) 1px solid;
   }
+}
 
+@media print, (max-width: 550px) {
   dl.skills, .experience .position-head, .projects .project-head {
     grid-template-columns: auto;
 
