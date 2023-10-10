@@ -98,7 +98,7 @@ const resumeData: ResumeData = {
     title: "Student Assistant",
     company: "University of Alaska, OIT Platforms, Applications, & Web Services Team",
     startDate: "Nov 2019",
-    description: "", // "Support staff, faculty, and students through web development and server administration.",
+    description: "Support staff, faculty, and student requests through web development and server administration.",
     skills: [
       "OmniCMS",
       "Javascript",
@@ -109,9 +109,7 @@ const resumeData: ResumeData = {
     bullets: [
       "Architect, design, and implementation of a web application for internal use in managing data for the UA Scholars scholarship designation.",
       "Facilitate research of teacher retention in rural Alaska through maintenance of K-12 Platform, allowing to better prepare incoming education staff for their positions.",
-      "Maintain and build out the University website to increase usability and accessibility.",
-      "Respond to and resolve support tickets from end users and customers.",
-      "Assist in debugging and maintaining infrastructure systems"
+      "Maintain and build out the University website to increase usability and accessibility."
     ]
   }],
   projects: [{
