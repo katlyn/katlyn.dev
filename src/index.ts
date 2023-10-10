@@ -1,7 +1,8 @@
+import { updateCache } from "./config/lastFm"
 import build from "./server"
 
 // Initialize Last.fm cache
-// updateCache().catch(console.error)
+updateCache().catch(console.error)
 
 const server = build({
   logger: {
