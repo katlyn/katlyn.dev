@@ -4,24 +4,29 @@ import fastify from "fastify"
 import { join } from "path"
 
 import { getTrack } from "./config/lastFm"
+import resume from "./resume"
 
-export default function build (opts = {}): ReturnType<typeof fastify> {
+function randomColor() {
+  const colors = [
+    "peach",
+    "strawberry",
+    "cantaloupe",
+    "banana",
+    "watermelon",
+    "mint",
+    "water",
+    "ube"
+    // 'tapioca'
+  ]
+  return colors[Math.floor(Math.random() * colors.length)]
+}
+
+export default function build(opts = {}): ReturnType<typeof fastify> {
   const server = fastify(opts)
 
   // TODO: Register routes
   server.get("/", async (request, reply) => {
-    const colors = [
-      "peach",
-      "strawberry",
-      "cantaloupe",
-      "banana",
-      "watermelon",
-      "mint",
-      "water",
-      "ube"
-      // 'tapioca'
-    ]
-    const color = colors[Math.floor(Math.random() * colors.length)]
+    const color = randomColor()
     void reply.type("text/html")
     return await ejs.renderFile(join(__dirname, "..", "views", "index.ejs"), {
       ...await getTrack(),
@@ -31,6 +36,15 @@ export default function build (opts = {}): ReturnType<typeof fastify> {
 
   server.get("/now-playing", async (request, reply) => {
     return await getTrack()
+  })
+
+  server.get("/resume", async (request, reply) => {
+    const color = randomColor()
+    void reply.type("text/html")
+    return await ejs.renderFile(join(__dirname, "..", "views", "resume", "index.ejs"), {
+      ...resume,
+      color
+    })
   })
 
   void server.register(serveStatic, {

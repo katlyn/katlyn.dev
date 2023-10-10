@@ -1,5 +1,6 @@
 @import url("/lexend/lexend.css");
 @import url("https://cdn.jsdelivr.net/gh/jgthms/minireset.css@master/minireset.min.css");
+
 :root {
   --peach: #efc4df;
   --strawberry: #e5a0a0;
@@ -36,10 +37,12 @@ header {
   grid-template-areas: "a b" "a c";
   gap: 0 1em;
 }
+
 header img {
   grid-area: a;
   height: 7em;
 }
+
 header h1 {
   font-size: 3em;
   border-bottom: var(--accent) solid 3px;
@@ -47,6 +50,7 @@ header h1 {
   margin-bottom: 0.2em;
   grid-area: b;
 }
+
 header h2 {
   grid-area: c;
 }
@@ -58,17 +62,21 @@ nav {
   margin: 4em 2em;
   text-align: right;
 }
+
 nav ul {
   list-style: none;
 }
+
 nav ul li {
   margin-bottom: 0.25em;
 }
+
 nav ul li a {
   color: inherit;
   text-decoration: var(--accent) underline 2px;
   transition: text-decoration 0.2s ease-in-out;
 }
+
 nav ul li a:hover {
   text-decoration: currentColor underline 2px;
 }
@@ -86,6 +94,7 @@ nav ul li a:hover {
     background-color: var(--dark);
   }
 }
+
 @media screen and (max-width: 700px) {
   :root {
     font-size: 1.2em;
@@ -111,14 +120,17 @@ nav ul li a:hover {
     left: 0;
   }
 }
+
 #now-playing {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
 }
+
 #now-playing > div {
   margin-top: 0.25em;
 }
+
 #now-playing .smol {
   font-size: 0.8em;
 }
@@ -128,21 +140,25 @@ nav ul li a:hover {
     align-items: center;
   }
 }
+
 .bars {
   display: flex;
   align-items: flex-end;
   height: 20px;
 }
+
 .bars > div {
   width: 4px;
   height: 8px;
   margin-right: 3px;
   background-color: var(--accent);
 }
+
 .bars > div:first-of-type {
   height: 13px;
   animation-delay: 0.2s;
 }
+
 .bars > div:last-of-type {
   height: 20px;
   margin-right: 0;

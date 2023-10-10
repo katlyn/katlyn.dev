@@ -22,6 +22,7 @@
     }
   },
   "rules": {
+    "arrow-spacing": "error",
     "quotes": [
       "error",
       "double",
@@ -49,8 +50,25 @@
       "error",
       "never"
     ],
+    "function-call-argument-newline": [
+      "error",
+      "consistent"
+    ],
+    "function-paren-newline": [
+      "error",
+      "multiline-arguments"
+    ],
     "no-multi-spaces": "error",
+    "no-multiple-empty-lines": [
+      "error",
+      {
+        "max": 2,
+        "maxBOF": 0,
+        "maxEOF": 0
+      }
+    ],
     "no-trailing-spaces": "error",
+    "comma-dangle": [ "error", "never" ],
     "no-whitespace-before-property": "error",
     "semi": [
       "error",
@@ -71,6 +89,19 @@
     "object-curly-spacing": [
       "error",
       "always"
+    ],
+    "object-curly-newline": [
+      "error",
+      {
+        "consistent": true,
+        "multiline": true
+      }
+    ],
+    "object-property-newline": [
+      "error",
+      {
+        "allowAllPropertiesOnSameLine": true
+      }
     ],
     "eqeqeq": [
       "error",

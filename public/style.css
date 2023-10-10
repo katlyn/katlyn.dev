@@ -1,6 +1,5 @@
 @import url("/lexend/lexend.css");
 @import url("https://cdn.jsdelivr.net/gh/jgthms/minireset.css@master/minireset.min.css");
-
 :root {
   --peach: #efc4df;
   --strawberry: #e5a0a0;
@@ -17,6 +16,10 @@
   color: var(--dark);
   background-color: var(--light);
   font-family: "Lexend", sans-serif;
+}
+
+body {
+  min-height: 100vh;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -37,7 +40,6 @@ header {
 header img {
   grid-area: a;
   height: 7em;
-  margin: auto;
 }
 
 header h1 {
@@ -83,6 +85,37 @@ nav ul li a:hover {
   bottom: 0;
   right: 0;
   margin: 2em;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    color: var(--light);
+    background-color: var(--dark);
+  }
+}
+@media screen and (max-width: 700px) {
+  :root {
+    font-size: 1.2em;
+  }
+  header {
+    margin: 4em auto;
+    position: relative;
+  }
+  header h1 {
+    font-size: 2em;
+  }
+  nav {
+    position: relative;
+    text-align: center;
+  }
+  nav ul li {
+    margin-bottom: 0.4em;
+  }
+  #now-playing {
+    left: 0;
+  }
+}
+#now-playing {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
@@ -96,6 +129,11 @@ nav ul li a:hover {
   font-size: 0.8em;
 }
 
+@media screen and (max-width: 700px) {
+  #now-playing {
+    align-items: center;
+  }
+}
 .bars {
   display: flex;
   align-items: flex-end;
@@ -120,50 +158,10 @@ nav ul li a:hover {
   animation-delay: 0.5s;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    color: var(--light);
-    background-color: var(--dark);
-  }
-}
-
-@media screen and (max-width: 700px) {
-  :root {
-    font-size: 1.2em;
-  }
-
-  header {
-    margin: 4em auto;
-    position: relative;
-    grid-template-areas: "a" "b" "c";
-  }
-
-  header img {
-    height: 5em;
-    margin-bottom: 1em;
-  }
-
-  header h1 {
-    font-size: 2em;
-  }
-
-  nav {
-    position: relative;
-    text-align: center;
-  }
-
-  nav ul li {
-    margin-bottom: 0.4em;
-  }
-
-  #now-playing {
-    left: 0;
-    align-items: center;
-  }
-}
-
 @keyframes rise-fall {
   to {
     height: 3px;
   }
 }
+
+/*# sourceMappingURL=style.css.map */

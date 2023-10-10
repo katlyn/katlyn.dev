@@ -1,0 +1,26 @@
+<section>
+    <h2>Education</h2>
+    <ul class="education">
+        <% for (const award of education) { %>
+            <li>
+                <div class="education-head">
+                    <h3><%= award.award %></h3>
+                    <span class="dates">
+                        <% if (award.startDate) { %>
+                            <%= award.startDate %> -
+                        <% } if (award.endDate) { %>
+                            <%= award.endDate %>
+                        <% } else { %>
+                            Present
+                        <% } %>
+                    </span>
+
+                    <span class="education-school">
+                        <%= award.school %>
+                    </span>
+                </div>
+                <p><%= award.blurb %></p>
+            </li>
+        <% } %>
+    </ul>
+</section>

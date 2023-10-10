@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#f9b28c">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#f9b28c">
+
+    <meta property="og:description" content="hi. i do code and stuff.">
+    <meta property="og:title" content="katlyn lorimer">
+
+    <meta name="author" content="Katlyn Lorimer - Resume">
+    <meta name="description" content="hi. i do code and stuff.">
+    <meta name="theme-color" content="#b0d2b0">
+
+    <link rel="stylesheet" href="/resume.css">
+
+    <title>Katlyn Lorimer - Resume</title>
+</head>
+<body style="--accent: var(--<%= color %>)">
+<header>
+    <img src="/polyfox.svg" alt="A low poly fox">
+    <div>
+        <h1>Katlyn Lorimer</h1>
+        <span>Full Stack Developer and Systems Engineer</span>
+    </div>
+</header>
+<main>
+    <%- include('contact') %>
+    <%- include('skills') %>
+    <%- include('experience') %>
+    <%- include('projects') %>
+    <%- include('education') %>
+    <%- include('awards') %>
+</main>
+<footer>
+    Katlyn Lorimer - Full Stack Developer and Systems Engineer
+    <br>
+    <span class="small">Generated from <a href="https://katlyn.dev/resume">katlyn.dev/resume</a></span>
+</footer>
+<!-- Cloudflare Web Analytics -->
+<script defer src='https://static.cloudflareinsights.com/beacon.min.js'
+        data-cf-beacon='{"token": "27dbaac591ac48b899c032e4b6c26e7b"}'></script>
+<!-- End Cloudflare Web Analytics -->
+</body>
+</html>

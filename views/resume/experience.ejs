@@ -1,0 +1,31 @@
+<section>
+    <h2>Experience</h2>
+    <ul class="experience">
+        <% for (const position of experience) { %>
+            <li>
+                <div class="position-head">
+                    <h3><%= position.title %></h3>
+                    <span class="dates">
+                        <% if (position.startDate) { %>
+                            <%= position.startDate %> -
+                        <% } if (position.endDate) { %>
+                            <%= position.endDate %>
+                        <% } else { %>
+                            Present
+                        <% } %>
+                    </span>
+                    <span class="position-company">
+                    <%= position.company %>
+                </span>
+                    <span class="position-skills"><%= position.skills.join(", ") %></span>
+                </div>
+                <p><%= position.description %></p>
+                <ul class="position-bullets">
+                    <% for (const bullet of position.bullets) { %>
+                        <li><%= bullet %></li>
+                    <% } %>
+                </ul>
+            </li>
+        <% } %>
+    </ul>
+</section>

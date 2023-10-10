@@ -37,4 +37,4 @@ export const getTrack = async (): Promise<typeof cached> => {
 }
 
 // Automatically update the cache every 60 seconds
-setInterval(updateCache, 60e3)
+// setInterval(updateCache, 60e3)
