@@ -3,6 +3,7 @@ import ejs from "ejs"
 import fastify from "fastify"
 import { join } from "path"
 
+import { getEntities } from "./config/cuteEntities"
 import { getTrack } from "./config/lastFm"
 
 function randomColor() {
@@ -12,7 +13,7 @@ function randomColor() {
     "cantaloupe",
     "banana",
     "watermelon",
-    "mint",
+    // "mint",
     "water",
     "ube"
     // 'tapioca'
@@ -27,14 +28,13 @@ export default function build(opts = {}): ReturnType<typeof fastify> {
     const color = randomColor()
     void reply.type("text/html")
     return await ejs.renderFile(join(__dirname, "..", "views", "index.ejs"), {
-      ...await getTrack(),
+      track: await getTrack(),
+      ...getEntities(),
       color
     })
   })
 
-  server.get("/now-playing", async (request, reply) => {
-    return await getTrack()
-  })
+  server.get("/now-playing", async (request, reply) => await getTrack())
 
   // server.get("/resume", async (request, reply) => {
   //   const color = randomColor()

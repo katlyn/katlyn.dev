@@ -39,21 +39,30 @@
         <!-- <li><a href="/resume.pdf">resume</a></li> -->
     </ul>
 </nav>
+<section id="entities">
+    <div class="sparkle"></div>
+    <h3 class="smol"><%= descriptor %> entities</h3>
+    <ul>
+        <% for (const entity of entities) { %>
+            <li><a href="<%= entity.url %>" target="_blank"><%= entity.name %></a></li>
+        <% } %>
+    </ul>
+</section>
 <section id="now-playing">
     <div class="bars">
         <div></div>
         <div></div>
         <div></div>
     </div>
-    <div class="smol">
-        <% if (current) { %>
+    <h2 class="smol">
+        <% if (track.current) { %>
             now listening to
         <% } else { %>
             last listened to
         <% } %>
-    </div>
-    <div><%= track.toLowerCase() %></div>
-    <div>by <%= artist.toLowerCase() %></div>
+    </h2>
+    <div><a href="<%= track.url %>" target="_blank"><%= track.track %></a></div>
+    <div>by <%= track.artist %></div>
 </section>
 </body>
 </html>

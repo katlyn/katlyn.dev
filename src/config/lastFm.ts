@@ -5,7 +5,8 @@ import env from "./env"
 let cached = {
   artist: "server starting",
   track: "boop beep",
-  current: true
+  current: true,
+  url: null
 }
 let cachedDate: ReturnType<typeof Date.now> = 0
 
@@ -25,7 +26,8 @@ export const updateCache = async (): Promise<void> => {
     cached = {
       artist: listening.recenttracks.track[0].artist["#text"],
       track: listening.recenttracks.track[0].name,
-      current: listening.recenttracks.track[0]?.["@attr"]?.nowplaying === "true"
+      current: listening.recenttracks.track[0]?.["@attr"]?.nowplaying === "true",
+      url: listening.recenttracks.track[0].url
     }
   } else {
     throw new Error(await request.text())
