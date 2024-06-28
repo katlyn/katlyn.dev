@@ -100,9 +100,18 @@ const resumeData: ResumeData = {
   ],
   experience: [
     {
+      title: "Software Engineer",
+      company: "Hydrolix Inc.",
+      startDate: "March 2024",
+      description: "Develop and maintain customer-facing APIs to facilitate use of the Hydrolix Streaming Data Lake platform.",
+      skills: ["Python", "Django", "Django Rest Framework", "Clickhouse"],
+      bullets: []
+    },
+    {
       title: "Full Stack Engineer - Student Position",
       company: "University of Alaska, OIT Platforms, Applications, & Web Services Team",
       startDate: "Nov 2019",
+      endDate: "Feb 2024",
       description: "Support staff, faculty, and student requests through web development and server administration.",
       skills: [
         "OmniCMS",

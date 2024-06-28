@@ -4,7 +4,6 @@ import fastify from "fastify"
 import { join } from "path"
 
 import { getTrack } from "./config/lastFm"
-import resume from "./resume"
 
 function randomColor() {
   const colors = [
@@ -24,7 +23,6 @@ function randomColor() {
 export default function build(opts = {}): ReturnType<typeof fastify> {
   const server = fastify(opts)
 
-  // TODO: Register routes
   server.get("/", async (request, reply) => {
     const color = randomColor()
     void reply.type("text/html")
@@ -38,14 +36,22 @@ export default function build(opts = {}): ReturnType<typeof fastify> {
     return await getTrack()
   })
 
-  server.get("/resume", async (request, reply) => {
-    const color = randomColor()
-    void reply.type("text/html")
-    return await ejs.renderFile(join(__dirname, "..", "views", "resume", "index.ejs"), {
-      ...resume,
-      color
-    })
-  })
+  // server.get("/resume", async (request, reply) => {
+  //   const color = randomColor()
+  //   void reply.type("text/html")
+  //   return await ejs.renderFile(join(__dirname, "..", "views", "resume", "index.ejs"), {
+  //     ...resume,
+  //     color
+  //   })
+  // })
+  //
+  // server.get("/letter", async (request, reply) => {
+  //   const color = randomColor()
+  //   void reply.type("text/html")
+  //   return await ejs.renderFile(join(__dirname, "..", "views", "letter.ejs"), {
+  //     color
+  //   })
+  // })
 
   void server.register(serveStatic, {
     root: join(__dirname, "..", "public")

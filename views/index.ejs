@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
@@ -14,49 +14,46 @@
     <meta name="theme-color" content="#f9b28c">
 
     <meta property="og:description" content="hi. i do code and stuff.">
-    <meta property="og:title" content="katlyn lorimer">
+    <meta property="og:title" content="katlyn">
 
-    <meta name="author" content="Katlyn Lorimer">
+    <meta name="author" content="katlyn">
     <meta name="description" content="hi. i do code and stuff.">
     <meta name="theme-color" content="#b0d2b0">
 
     <link rel="stylesheet" href="/style.css">
 
-    <title>Katlyn Lorimer</title>
-  </head>
-  <body style="--accent: var(--<%= color %>)">
-    <header>
-      <img src="/polyfox.svg" alt="A low poly fox">
-      <h1>katlyn lorimer</h1>
-      <h2>hi. i do code and stuff.</h2>
-    </header>
-    <nav>
-      <ul>
+    <title>katlyn</title>
+</head>
+<body style="--accent: var(--<%= color %>)">
+<header>
+    <img src="/polyfox.svg" alt="A low poly fox">
+    <h1>katlyn</h1>
+    <h2>hi. i do code and stuff.</h2>
+</header>
+<nav>
+    <ul>
         <li><a href="https://blog.katlyn.dev/">blog</a></li>
         <li><a href="https://github.com/katlyn/">github</a></li>
         <li><a rel="me" href="https://mastodon.is-hardly.online/@katlyn">fediverse</a></li>
         <li><a href="https://matrix.to/#/@katlyn:is-hardly.online">matrix</a></li>
         <!-- <li><a href="/resume.pdf">resume</a></li> -->
-      </ul>
-    </nav>
-    <section id="now-playing">
-      <div class="bars">
+    </ul>
+</nav>
+<section id="now-playing">
+    <div class="bars">
         <div></div>
         <div></div>
         <div></div>
-      </div>
-      <div class="smol">
+    </div>
+    <div class="smol">
         <% if (current) { %>
-          now listening to
+            now listening to
         <% } else { %>
-          last listened to
+            last listened to
         <% } %>
-      </div>
-      <div><%= track.toLowerCase() %></div>
-      <div>by <%= artist.toLowerCase() %></div>
-    </section>
-    <!-- Cloudflare Web Analytics -->
-    <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "27dbaac591ac48b899c032e4b6c26e7b"}'></script>
-    <!-- End Cloudflare Web Analytics -->
-  </body>
+    </div>
+    <div><%= track.toLowerCase() %></div>
+    <div>by <%= artist.toLowerCase() %></div>
+</section>
+</body>
 </html>
