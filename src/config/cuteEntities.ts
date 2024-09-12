@@ -37,6 +37,10 @@ const entities: Entity[] = [
   {
     name: "samara",
     url: "https://khcrysalis.dev/"
+  },
+  {
+    name: "Odette",
+    url: "http://puppygirl.systems/"
   }
 ]
 
