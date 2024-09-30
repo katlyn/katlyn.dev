@@ -27,18 +27,6 @@ const entities: Entity[] = [
     url: "https://dingenskirchen.org/"
   },
   {
-    name: "Zayne",
-    url: "https://zaynedrift.com/"
-  },
-  {
-    name: "korisu",
-    url: "https://discord.com/users/973041930973896764"
-  },
-  {
-    name: "samara",
-    url: "https://khcrysalis.dev/"
-  },
-  {
     name: "Odette",
     url: "http://puppygirl.systems/"
   }
