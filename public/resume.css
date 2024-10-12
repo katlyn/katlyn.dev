@@ -1,187 +1,215 @@
 @import url("/lexend/lexend.css");
-@import url("https://cdn.jsdelivr.net/gh/jgthms/minireset.css@master/minireset.min.css");
+@import url("/minireset.css");
+
 :root {
-  --peach: #efc4df;
-  --strawberry: #e5a0a0;
-  --cantaloupe: #f9b28c;
-  --banana: #f0cf9f;
-  --watermelon: #b0d2b0;
-  --mint: #95fecc;
-  --water: #80bbdb;
-  --ube: #a99dbd;
-  --tapioca: #c1c1c1;
-  --dark: #111;
-  --light: #EEE;
-  --accent: var(--watermelon);
-  color: var(--dark);
-  background-color: var(--light);
-  font-family: "Lexend", sans-serif;
+    --peach: #efc4df;
+    --strawberry: #e5a0a0;
+    --cantaloupe: #f9b28c;
+    --banana: #f0cf9f;
+    --watermelon: #b0d2b0;
+    --mint: #95fecc;
+    --water: #80bbdb;
+    --ube: #a99dbd;
+    --tapioca: #c1c1c1;
+    --dark: #111;
+    --light: #EEE;
+    --accent: var(--watermelon);
+    color: var(--dark);
+    background-color: var(--light);
+    font-family: "Lexend", sans-serif;
 }
 
 header {
-  border-bottom: var(--accent) solid 3px;
-  padding-bottom: 0.5em;
-  display: flex;
-  align-items: center;
-  gap: 1em;
-  margin-bottom: 2rem;
+    border-bottom: var(--accent) solid 3px;
+    padding-bottom: 0.5em;
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    margin-bottom: 2rem;
 }
+
 header img {
-  height: 3.5em;
+    height: 3.5em;
 }
+
 header h1 {
-  font-size: 2em;
+    font-size: 2em;
 }
+
 header span {
-  justify-self: end;
+    justify-self: end;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  break-after: avoid;
+    break-after: avoid;
 }
 
 h2 {
-  font-size: 1.75em;
+    font-size: 1.75em;
 }
 
 section:not(:first-child) {
-  margin-top: 2rem;
+    margin-top: 2rem;
 }
 
 dl.skills, dl.contact {
-  break-inside: avoid;
-  display: grid;
-  grid-template-columns: auto 1fr;
-  gap: 0.25rem 1em;
-  margin-top: 0.75rem;
+    break-inside: avoid;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 0.25rem 1em;
+    margin-top: 0.75rem;
 }
+
 dl.skills dt, dl.contact dt {
-  font-weight: bold;
+    font-weight: bold;
 }
+
 dl.skills dd, dl.contact dd {
-  text-align: right;
+    text-align: right;
 }
 
 .experience, .projects, .education {
-  margin-top: 0.75rem;
-  break-inside: avoid;
+    margin-top: 0.75rem;
+    break-inside: avoid;
 }
+
 .experience > li, .projects > li, .education > li {
-  margin-top: 0.75rem;
+    margin-top: 0.75rem;
 }
+
 .experience .position-head, .experience .project-head, .experience .education-head, .projects .position-head, .projects .project-head, .projects .education-head, .education .position-head, .education .project-head, .education .education-head {
-  display: grid;
-  gap: 0.25rem 1em;
-  grid-template-columns: auto auto;
+    display: grid;
+    gap: 0.25rem 1em;
+    grid-template-columns: auto auto;
 }
+
 .experience .position-head h3, .experience .project-head h3, .experience .education-head h3, .projects .position-head h3, .projects .project-head h3, .projects .education-head h3, .education .position-head h3, .education .project-head h3, .education .education-head h3 {
-  font-weight: bold;
+    font-weight: bold;
 }
+
 .experience .position-head .dates, .experience .position-head .position-skills, .experience .position-head .project-skills, .experience .project-head .dates, .experience .project-head .position-skills, .experience .project-head .project-skills, .experience .education-head .dates, .experience .education-head .position-skills, .experience .education-head .project-skills, .projects .position-head .dates, .projects .position-head .position-skills, .projects .position-head .project-skills, .projects .project-head .dates, .projects .project-head .position-skills, .projects .project-head .project-skills, .projects .education-head .dates, .projects .education-head .position-skills, .projects .education-head .project-skills, .education .position-head .dates, .education .position-head .position-skills, .education .position-head .project-skills, .education .project-head .dates, .education .project-head .position-skills, .education .project-head .project-skills, .education .education-head .dates, .education .education-head .position-skills, .education .education-head .project-skills {
-  text-align: right;
-  font-style: italic;
+    text-align: right;
+    font-style: italic;
 }
+
 .experience .position-bullets, .experience .project-bullets, .projects .position-bullets, .projects .project-bullets, .education .position-bullets, .education .project-bullets {
-  list-style: disc;
-  padding-left: 1em;
+    list-style: disc;
+    padding-left: 1em;
 }
+
 .experience .position-bullets li, .experience .project-bullets li, .projects .position-bullets li, .projects .project-bullets li, .education .position-bullets li, .education .project-bullets li {
-  margin-top: 0.25rem;
+    margin-top: 0.25rem;
 }
 
 .awards {
-  margin-top: 0.75rem;
-  break-inside: avoid;
+    margin-top: 0.75rem;
+    break-inside: avoid;
 }
+
 .awards .award-head {
-  display: grid;
-  grid-template-areas: "a b" "c c";
+    display: grid;
+    grid-template-areas: "a b" "c c";
 }
+
 .awards .award-head h3 {
-  font-weight: bold;
-  grid-area: a;
+    font-weight: bold;
+    grid-area: a;
 }
+
 .awards .award-head .dates {
-  grid-area: b;
-  text-align: right;
+    grid-area: b;
+    text-align: right;
 }
+
 .awards .award-head .award-presenter {
-  grid-area: c;
+    grid-area: c;
 }
+
 .awards blockquote {
-  text-align: justify;
-  margin-top: 0.5rem;
-  padding-left: 1em;
-  border-left: var(--accent) solid 3px;
+    text-align: justify;
+    margin-top: 0.5rem;
+    padding-left: 1em;
+    border-left: var(--accent) solid 3px;
 }
 
 p {
-  margin-top: 0.5rem;
-  text-align: justify;
+    margin-top: 0.5rem;
+    text-align: justify;
 }
 
 a {
-  color: #347ca3;
+    color: #347ca3;
 }
 
 footer {
-  margin-top: auto;
-  margin-bottom: 2em;
-  text-align: center;
-  padding-top: 3em;
+    margin-top: auto;
+    margin-bottom: 2em;
+    text-align: center;
+    padding-top: 3em;
 }
+
 footer .small {
-  font-size: 0.7em;
-  opacity: 0.75;
+    font-size: 0.7em;
+    opacity: 0.75;
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    color: var(--light);
-    background-color: var(--dark);
-  }
+    :root {
+        color: var(--light);
+        background-color: var(--dark);
+    }
 }
+
 @media not print {
-  body {
-    margin: 0 auto;
-    padding: 2rem;
-    max-width: 60rem;
-  }
-  footer .small {
-    display: none;
-  }
+    body {
+        margin: 0 auto;
+        padding: 2rem;
+        max-width: 60rem;
+    }
+
+    footer .small {
+        display: none;
+    }
 }
+
 @media print {
-  :root {
-    color: black;
-    background: transparent;
-    margin: 0 0.25em;
-  }
-  main {
-    column-count: 2;
-    column-gap: 3em;
-    column-rule: var(--accent) 1px solid;
-  }
+    :root {
+        color: black;
+        background: transparent;
+        margin: 0 0.25em;
+    }
+
+    main {
+        column-count: 2;
+        column-gap: 3em;
+        column-rule: var(--accent) 1px solid;
+    }
 }
+
 @media print, (max-width: 550px) {
-  dl.skills, .experience .position-head, .projects .project-head {
-    grid-template-columns: auto;
-  }
-  dl.skills dd, dl.skills .position-skills, dl.skills .project-skills, .experience .position-head dd, .experience .position-head .position-skills, .experience .position-head .project-skills, .projects .project-head dd, .projects .project-head .position-skills, .projects .project-head .project-skills {
-    text-align: left;
-  }
-  .experience .position-head, .projects .project-head, .education .education-head {
-    grid-template-areas: "a b" "c c" "d d";
-  }
-  .experience .position-head .dates, .projects .project-head .dates, .education .education-head .dates {
-    grid-area: b;
-  }
-  .experience .position-head .position-company, .experience .position-head .project-topic, .experience .position-head .education-school, .projects .project-head .position-company, .projects .project-head .project-topic, .projects .project-head .education-school, .education .education-head .position-company, .education .education-head .project-topic, .education .education-head .education-school {
-    grid-area: c;
-  }
-  .experience .position-head .position-skills, .experience .position-head .project-skills, .projects .project-head .position-skills, .projects .project-head .project-skills, .education .education-head .position-skills, .education .education-head .project-skills {
-    grid-area: d;
-  }
+    dl.skills, .experience .position-head, .projects .project-head {
+        grid-template-columns: auto;
+    }
+
+    dl.skills dd, dl.skills .position-skills, dl.skills .project-skills, .experience .position-head dd, .experience .position-head .position-skills, .experience .position-head .project-skills, .projects .project-head dd, .projects .project-head .position-skills, .projects .project-head .project-skills {
+        text-align: left;
+    }
+
+    .experience .position-head, .projects .project-head, .education .education-head {
+        grid-template-areas: "a b" "c c" "d d";
+    }
+
+    .experience .position-head .dates, .projects .project-head .dates, .education .education-head .dates {
+        grid-area: b;
+    }
+
+    .experience .position-head .position-company, .experience .position-head .project-topic, .experience .position-head .education-school, .projects .project-head .position-company, .projects .project-head .project-topic, .projects .project-head .education-school, .education .education-head .position-company, .education .education-head .project-topic, .education .education-head .education-school {
+        grid-area: c;
+    }
+
+    .experience .position-head .position-skills, .experience .position-head .project-skills, .projects .project-head .position-skills, .projects .project-head .project-skills, .education .education-head .position-skills, .education .education-head .project-skills {
+        grid-area: d;
+    }
 }
 
 /*# sourceMappingURL=resume.css.map */
