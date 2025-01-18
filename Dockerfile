@@ -13,7 +13,7 @@ RUN pnpm i --frozen-lockfile
 # Compile things
 COPY ./public ./public
 COPY ./src ./src
-RUN npm run build
+RUN pnpm run build
 
 
 FROM base
