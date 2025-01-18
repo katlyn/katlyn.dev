@@ -40,7 +40,7 @@
     </ul>
 </nav>
 <section id="entities">
-    <div class="sparkle"></div>
+    <div class="icon sparkle"></div>
     <h3 class="smol"><%= descriptor %> entities</h3>
     <ul>
         <% for (const entity of entities) { %>
@@ -49,11 +49,7 @@
     </ul>
 </section>
 <section id="now-playing">
-    <div class="bars">
-        <div></div>
-        <div></div>
-        <div></div>
-    </div>
+    <div class="icon headphones"></div>
     <h2 class="smol">
         <% if (track.current) { %>
             now listening to
@@ -62,7 +58,7 @@
         <% } %>
     </h2>
     <div><a href="<%= track.url %>" target="_blank"><%= track.track %></a></div>
-    <div>by <%= track.artist %></div>
+    <div class="artist">by <%= track.artist %></div>
 </section>
 </body>
 </html>
