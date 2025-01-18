@@ -23,7 +23,7 @@ COPY package.json pnpm-lock.yaml tsconfig.json ./
 RUN pnpm i --frozen-lockfile --prod
 
 # Copy over finalized files
-COPY ./public ./public
+COPY --from=build ./public ./public
 COPY ./views ./views
 COPY --from=build /katlyn-dev/dist /katlyn-dev/dist
 

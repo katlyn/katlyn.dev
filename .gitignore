@@ -1,2 +1,7 @@
 /node_modules
 .nyc_output
+.idea
+.env
+*.css
+*.css.map
+dist
