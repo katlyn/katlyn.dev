@@ -33,6 +33,7 @@
     "typescript": "^4.9.4"
   },
   "dependencies": {
+    "@fastify/cors": "^8",
     "@fastify/static": "^6.6.0",
     "@fastify/type-provider-typebox": "^2.4.0",
     "@sinclair/typebox": "^0.25.13",

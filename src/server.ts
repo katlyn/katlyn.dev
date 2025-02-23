@@ -1,3 +1,4 @@
+import fastifyCors from "@fastify/cors"
 import serveStatic from "@fastify/static"
 import ejs from "ejs"
 import fastify from "fastify"
@@ -23,6 +24,10 @@ function randomColor() {
 
 export default function build(opts = {}): ReturnType<typeof fastify> {
   const server = fastify(opts)
+
+  server.register(fastifyCors, {
+    methods: "GET"
+  })
 
   server.get("/", async (request, reply) => {
     const color = randomColor()
