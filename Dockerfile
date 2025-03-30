@@ -1,31 +1,13 @@
-FROM node:22-alpine AS base
-ENV PNPM_HOME="/pnpm"
-ENV PATH="$PNPM_HOME:$PATH"
-RUN corepack enable
+FROM denoland/deno:alpine-2.2.6
 WORKDIR /katlyn-dev
-
-FROM base AS build
-
-# Install packages
-COPY package.json pnpm-lock.yaml tsconfig.json ./
-RUN pnpm i --frozen-lockfile
-
-# Compile things
-COPY ./public ./public
-COPY ./src ./src
-RUN pnpm run build
-
-
-FROM base
 EXPOSE 80
 
-# Install packages
-COPY package.json pnpm-lock.yaml tsconfig.json ./
-RUN pnpm i --frozen-lockfile --prod
-
 # Copy over finalized files
-COPY --from=build /katlyn-dev/public ./public
+COPY ./deno.json ./deno.lock ./
+COPY ./public ./public
 COPY ./views ./views
-COPY --from=build /katlyn-dev/dist /katlyn-dev/dist
+COPY ./src ./src
 
-CMD [ "pnpm", "start" ]
+RUN deno install --entrypoint --frozen --unstable-sloppy-imports src/index.ts
+
+CMD [ "deno", "-A", "--unstable-sloppy-imports", "src/index.ts" ]

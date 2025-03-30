@@ -1,8 +1,9 @@
-import fastifyCors from "@fastify/cors"
-import serveStatic from "@fastify/static"
-import ejs from "ejs"
-import fastify from "fastify"
-import { join } from "path"
+import { join } from "node:path"
+
+import fastifyCors from "npm:@fastify/cors"
+import serveStatic from "npm:@fastify/static"
+import ejs from "npm:ejs"
+import fastify from "npm:fastify"
 
 import { getEntities } from "./config/cuteEntities"
 import { getTrack } from "./config/lastFm"
@@ -32,7 +33,7 @@ export default function build(opts = {}): ReturnType<typeof fastify> {
   server.get("/", async (request, reply) => {
     const color = randomColor()
     void reply.type("text/html")
-    return await ejs.renderFile(join(__dirname, "..", "views", "index.ejs"), {
+    return await ejs.renderFile(join(import.meta.dirname, "..", "views", "index.ejs"), {
       track: await getTrack(),
       ...getEntities(),
       color
@@ -59,7 +60,7 @@ export default function build(opts = {}): ReturnType<typeof fastify> {
   // })
 
   void server.register(serveStatic, {
-    root: join(__dirname, "..", "public")
+    root: join(import.meta.dirname, "..", "public")
   })
 
   return server
