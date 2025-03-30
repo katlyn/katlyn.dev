@@ -33,7 +33,7 @@ export default function build(opts = {}) {
   server.get("/", (_request, reply) => {
     const color = randomColor();
     void reply.type("text/html");
-    return render(Index({ color }));
+    return "<!DOCTYPE html>" + render(Index({ color }));
   });
 
   server.get("/now-playing", () => getTrack());
