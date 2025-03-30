@@ -1,12 +1,12 @@
-import { join } from "node:path"
+import { join } from "node:path";
 
-import fastifyCors from "npm:@fastify/cors"
-import serveStatic from "npm:@fastify/static"
-import ejs from "npm:ejs"
-import fastify from "npm:fastify"
+import fastifyCors from "npm:@fastify/cors";
+import serveStatic from "npm:@fastify/static";
+import ejs from "npm:ejs";
+import fastify from "npm:fastify";
 
-import { getEntities } from "./config/cuteEntities"
-import { getTrack } from "./config/lastFm"
+import { getEntities } from "./config/cuteEntities.ts";
+import { getTrack } from "./config/lastFm.ts";
 
 function randomColor() {
   const colors = [
@@ -17,30 +17,33 @@ function randomColor() {
     "watermelon",
     // "mint",
     "water",
-    "ube"
+    "ube",
     // 'tapioca'
-  ]
-  return colors[Math.floor(Math.random() * colors.length)]
+  ];
+  return colors[Math.floor(Math.random() * colors.length)];
 }
 
-export default function build(opts = {}): ReturnType<typeof fastify> {
-  const server = fastify(opts)
+export default function build(opts = {}) {
+  const server = fastify(opts);
 
   server.register(fastifyCors, {
-    methods: "GET"
-  })
+    methods: "GET",
+  });
 
-  server.get("/", async (request, reply) => {
-    const color = randomColor()
-    void reply.type("text/html")
-    return await ejs.renderFile(join(import.meta.dirname, "..", "views", "index.ejs"), {
-      track: await getTrack(),
-      ...getEntities(),
-      color
-    })
-  })
+  server.get("/", async (_request, reply) => {
+    const color = randomColor();
+    void reply.type("text/html");
+    return await ejs.renderFile(
+      join(import.meta.dirname!, "..", "views", "index.ejs"),
+      {
+        track: getTrack(),
+        ...getEntities(),
+        color,
+      },
+    );
+  });
 
-  server.get("/now-playing", async (request, reply) => await getTrack())
+  server.get("/now-playing", () => getTrack());
 
   // server.get("/resume", async (request, reply) => {
   //   const color = randomColor()
@@ -60,8 +63,8 @@ export default function build(opts = {}): ReturnType<typeof fastify> {
   // })
 
   void server.register(serveStatic, {
-    root: join(import.meta.dirname, "..", "public")
-  })
+    root: join(import.meta.dirname!, "..", "public"),
+  });
 
-  return server
+  return server;
 }

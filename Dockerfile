@@ -8,6 +8,6 @@ COPY ./public ./public
 COPY ./views ./views
 COPY ./src ./src
 
-RUN deno install --entrypoint --frozen --unstable-sloppy-imports src/index.ts
+RUN deno install --entrypoint --frozen src/index.ts
 
-CMD [ "deno", "-A", "--unstable-sloppy-imports", "src/index.ts" ]
+CMD [ "deno", "-A", "src/index.ts" ]
