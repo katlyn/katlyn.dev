@@ -1,18 +1,18 @@
-import { secret, strictVerify } from "npm:env-verifier"
+import { secret, strictVerify } from "npm:env-verifier";
 
 const config = {
   lastfm: {
     username: "LASTFM_USERNAME",
-    apiKey: secret("LASTFM_API_KEY")
+    apiKey: secret("LASTFM_API_KEY"),
   },
   contact: {
     phone: "CONTACT_PHONE",
     email: "CONTACT_EMAIL",
     website: "CONTACT_WEBSITE",
-    github: "CONTACT_GITHUB"
-  }
-}
+    github: "CONTACT_GITHUB",
+  },
+};
 
-const env = strictVerify<typeof config>(config)
+const env = strictVerify<typeof config>(config);
 
-export default env
+export default env;

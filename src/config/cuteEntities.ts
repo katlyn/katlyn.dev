@@ -1,36 +1,36 @@
-type HttpSchemes = "http" | "https"
+type HttpSchemes = "http" | "https";
 
 interface Entity {
-  name: string
-  url: `${HttpSchemes}://${string}`
+  name: string;
+  url: `${HttpSchemes}://${string}`;
 }
 
 const entities: Entity[] = [
   {
     name: "Shoritsu",
-    url: "https://shoritsu.xyz/"
+    url: "https://shoritsu.xyz/",
   },
   {
     name: "Vee",
-    url: "https://vendicated.dev/"
+    url: "https://vendicated.dev/",
   },
   {
     name: "Cadence",
-    url: "https://cadence.moe"
+    url: "https://cadence.moe",
   },
   {
     name: "Emma",
-    url: "https://github.com/ghostlydilemma"
+    url: "https://github.com/ghostlydilemma",
   },
   {
     name: "Cass",
-    url: "https://dingenskirchen.org/"
+    url: "https://dingenskirchen.org/",
   },
   {
     name: "Odette",
-    url: "http://puppygirl.systems/"
-  }
-]
+    url: "http://puppygirl.systems/",
+  },
+];
 
 const descriptors: string[] = [
   "admirable",
@@ -40,17 +40,17 @@ const descriptors: string[] = [
   "neat",
   "notable",
   "peculiar",
-  "pleasant"
-]
+  "pleasant",
+];
 
 export function getEntities() {
-  const copy = [...entities]
+  const copy = [...entities];
   for (let i = copy.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1))
-    ;[copy[i], copy[j]] = [copy[j], copy[i]]
+    const j = Math.floor(Math.random() * (i + 1));
+    [copy[i], copy[j]] = [copy[j], copy[i]];
   }
   return {
     descriptor: descriptors[Math.floor(Math.random() * descriptors.length)],
-    entities: copy
-  }
+    entities: copy,
+  };
 }

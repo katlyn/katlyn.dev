@@ -2,71 +2,71 @@
 @import url("/minireset.css");
 
 :root {
-    --peach: #efc4df;
-    --strawberry: #e5a0a0;
-    --cantaloupe: #f9b28c;
-    --banana: #f0cf9f;
-    --watermelon: #b0d2b0;
-    --mint: #95fecc;
-    --water: #80bbdb;
-    --ube: #a99dbd;
-    --tapioca: #c1c1c1;
-    --dark: #111;
-    --light: #EEE;
-    --accent: var(--watermelon);
-    color: var(--dark);
-    background-color: var(--light);
-    font-family: "Lexend", sans-serif;
+  --peach: #efc4df;
+  --strawberry: #e5a0a0;
+  --cantaloupe: #f9b28c;
+  --banana: #f0cf9f;
+  --watermelon: #b0d2b0;
+  --mint: #95fecc;
+  --water: #80bbdb;
+  --ube: #a99dbd;
+  --tapioca: #c1c1c1;
+  --dark: #111;
+  --light: #eee;
+  --accent: var(--watermelon);
+  color: var(--dark);
+  background-color: var(--light);
+  font-family: "Lexend", sans-serif;
 
-    --header-margin: 2rem;
-    --after-header-margin: 0.75rem;
-    --inner-section-margin: 0.75rem;
-    --inner-content-margin: 1rem;
-    --listMargin: 0.25rem;
+  --header-margin: 2rem;
+  --after-header-margin: 0.75rem;
+  --inner-section-margin: 0.75rem;
+  --inner-content-margin: 1rem;
+  --listMargin: 0.25rem;
 }
 
 header {
-    border-bottom: var(--accent) solid 3px;
-    padding-bottom: 0.5em;
-    display: flex;
-    align-items: center;
-    gap: 1em;
+  border-bottom: var(--accent) solid 3px;
+  padding-bottom: 0.5em;
+  display: flex;
+  align-items: center;
+  gap: 1em;
 
-    img {
-        height: 3.5em;
-    }
+  img {
+    height: 3.5em;
+  }
 
-    h1 {
-        font-size: 2em;
-    }
+  h1 {
+    font-size: 2em;
+  }
 
-    span {
-        justify-self: end;
-    }
+  span {
+    justify-self: end;
+  }
 
-    margin-bottom: var(--header-margin);
+  margin-bottom: var(--header-margin);
 }
 
 p {
-    margin-top: var(--inner-content-margin);
+  margin-top: var(--inner-content-margin);
 }
 
 .address {
-    text-align: right;
+  text-align: right;
 }
 
 @media not print {
-    body {
-        margin: 0 auto;
-        padding: 2rem;
-        max-width: 60rem;
-    }
+  body {
+    margin: 0 auto;
+    padding: 2rem;
+    max-width: 60rem;
+  }
 }
 
 @media print {
-    :root {
-        color: black;
-        background: transparent;
-        margin: 0 0.25em;
-    }
+  :root {
+    color: black;
+    background: transparent;
+    margin: 0 0.25em;
+  }
 }
