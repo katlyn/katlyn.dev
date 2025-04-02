@@ -1,4 +1,1 @@
-/node_modules
-/layers/mathjax-node-layer
-/templates
-/template.yml
+.gitignore

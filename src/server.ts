@@ -1,12 +1,13 @@
-import { join } from "node:path";
-
-import fastifyCors from "npm:@fastify/cors";
-import serveStatic from "npm:@fastify/static";
+import logger from "oak-logger";
 import { render } from "npm:preact-render-to-string";
-import fastify from "npm:fastify";
-
-import { getTrack } from "./config/lastFm.ts";
 import Index from "../views/Index.tsx";
+import { resolve } from "jsr:@std/path";
+
+import { Application, Router, send } from "jsr:@oak/oak";
+import { VNode } from "preact";
+import NotFound from "../views/NotFound.tsx";
+
+const PUBLIC_ROOT_PATH = resolve(import.meta.dirname ?? "", "../public");
 
 function randomColor() {
   const colors = [
@@ -23,24 +24,43 @@ function randomColor() {
   return colors[Math.floor(Math.random() * colors.length)];
 }
 
-export default function build(opts = {}) {
-  const server = fastify(opts);
+function renderHtml(vnodes: VNode) {
+  return "<!DOCTYPE html>" + render(vnodes);
+}
 
-  server.register(fastifyCors, {
-    methods: "GET",
-  });
+export default function build() {
+  const router = new Router();
 
-  server.get("/", (_request, reply) => {
+  router.get("/", (ctx) => {
     const color = randomColor();
-    void reply.type("text/html");
-    return "<!DOCTYPE html>" + render(Index({ color }));
+    ctx.response.headers.set("content-type", "text/html");
+    ctx.response.body = renderHtml(Index({ color }));
   });
 
-  server.get("/now-playing", () => getTrack());
+  const app = new Application();
+  app.use(logger.logger);
+  app.use(logger.responseTime);
+  app.use(router.routes());
+  app.use(router.allowedMethods());
 
-  void server.register(serveStatic, {
-    root: join(import.meta.dirname!, "..", "public"),
+  app.use(async (ctx, next) => {
+    try {
+      await send(ctx, ctx.request.url.pathname, {
+        root: PUBLIC_ROOT_PATH,
+        index: "index.html",
+      });
+    } catch (_) {
+      await next();
+    }
   });
 
-  return server;
+  app.use((ctx, _next) => {
+    ctx.response.status = 404;
+    ctx.response.headers.set("content-type", "text/html");
+    ctx.response.body = renderHtml(
+      NotFound({ path: ctx.request.url.pathname }),
+    );
+  });
+
+  return app;
 }

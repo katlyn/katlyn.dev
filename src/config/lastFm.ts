@@ -1,5 +1,3 @@
-import { URL } from "node:url";
-
 import env from "./env.ts";
 
 let cached = {

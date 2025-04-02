@@ -1,4 +1,4 @@
-import { secret, strictVerify } from "npm:env-verifier";
+import { secret, strictVerify } from "env-verifier";
 
 const config = {
   lastfm: {

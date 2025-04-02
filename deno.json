@@ -4,7 +4,12 @@
     "jsxImportSource": "preact"
   },
   "imports": {
-    "preact": "npm:preact"
+    "@oak/oak": "jsr:@oak/oak@^17.1.4",
+    "@std/path": "jsr:@std/path@^1.0.8",
+    "env-verifier": "npm:env-verifier@^1.5.0",
+    "preact": "npm:preact",
+    "preact-render-to-string": "npm:preact-render-to-string@^6.5.13",
+    "oak-logger": "https://deno.land/x/oak_logger/mod.ts"
   },
   "vendor": true
 }
