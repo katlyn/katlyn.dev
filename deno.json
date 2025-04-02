@@ -6,6 +6,7 @@
   "imports": {
     "@oak/oak": "jsr:@oak/oak@^17.1.4",
     "@std/path": "jsr:@std/path@^1.0.8",
+    "@tajpouria/cors": "jsr:@tajpouria/cors@^1.2.1",
     "env-verifier": "npm:env-verifier@^1.5.0",
     "preact": "npm:preact",
     "preact-render-to-string": "npm:preact-render-to-string@^6.5.13",

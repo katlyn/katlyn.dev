@@ -1,10 +1,11 @@
+import { Application, Router, send } from "@oak/oak";
+import { resolve } from "@std/path";
+import { oakCors } from "@tajpouria/cors";
 import logger from "oak-logger";
-import { render } from "npm:preact-render-to-string";
-import Index from "../views/Index.tsx";
-import { resolve } from "jsr:@std/path";
-
-import { Application, Router, send } from "jsr:@oak/oak";
 import { VNode } from "preact";
+import { render } from "preact-render-to-string";
+
+import Index from "../views/Index.tsx";
 import NotFound from "../views/NotFound.tsx";
 
 const PUBLIC_ROOT_PATH = resolve(import.meta.dirname ?? "", "../public");
@@ -43,7 +44,7 @@ export default function build() {
   app.use(router.routes());
   app.use(router.allowedMethods());
 
-  app.use(async (ctx, next) => {
+  app.use(oakCors(), async (ctx, next) => {
     try {
       await send(ctx, ctx.request.url.pathname, {
         root: PUBLIC_ROOT_PATH,
