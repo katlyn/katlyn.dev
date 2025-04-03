@@ -5,9 +5,9 @@ EXPOSE 80
 # Copy over finalized files
 COPY ./deno.json ./deno.lock ./
 COPY ./public ./public
-COPY ./views ./views
+COPY src/views ./views
 COPY ./src ./src
 
 RUN deno install --entrypoint --frozen src/index.ts
 
-CMD [ "deno", "-A", "src/index.ts" ]
+CMD [ "deno", "task", "start" ]

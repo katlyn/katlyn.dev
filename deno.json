@@ -12,5 +12,9 @@
     "preact-render-to-string": "npm:preact-render-to-string@^6.5.13",
     "oak-logger": "https://deno.land/x/oak_logger/mod.ts"
   },
+  "tasks": {
+    "dev": "deno run --watch-hmr --allow-net=0.0.0.0,ws.audioscrobbler.com --allow-read=public --allow-env --env-file src/index.ts",
+    "start": "deno run --allow-net=0.0.0.0,ws.audioscrobbler.com --allow-read=public --allow-env --env-file src/index.ts"
+  },
   "vendor": true
 }
