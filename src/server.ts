@@ -5,8 +5,9 @@ import logger from "oak-logger";
 import { VNode } from "preact";
 import { render } from "preact-render-to-string";
 
-import Index from "../views/Index.tsx";
-import NotFound from "../views/NotFound.tsx";
+import Index from "./views/Index.tsx";
+import NotFound from "./views/NotFound.tsx";
+import Layout from "./components/Layout.tsx";
 
 const PUBLIC_ROOT_PATH = resolve(import.meta.dirname ?? "", "../public");
 
@@ -26,16 +27,16 @@ function randomColor() {
 }
 
 function renderHtml(vnodes: VNode) {
-  return "<!DOCTYPE html>" + render(vnodes);
+  const accentColor = randomColor();
+  return "<!DOCTYPE html>" + render(Layout({ accentColor, children: vnodes }));
 }
 
 export default function build() {
   const router = new Router();
 
   router.get("/", (ctx) => {
-    const color = randomColor();
     ctx.response.headers.set("content-type", "text/html");
-    ctx.response.body = renderHtml(Index({ color }));
+    ctx.response.body = renderHtml(Index());
   });
 
   const app = new Application();
