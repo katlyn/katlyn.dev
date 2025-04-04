@@ -8,6 +8,7 @@ import { render } from "preact-render-to-string";
 import Index from "./views/Index.tsx";
 import NotFound from "./views/NotFound.tsx";
 import Layout from "./components/Layout.tsx";
+import Head from "./components/Head.tsx";
 
 const PUBLIC_ROOT_PATH = resolve(import.meta.dirname ?? "", "../public");
 
@@ -59,8 +60,10 @@ export default function build() {
   app.use((ctx, _next) => {
     ctx.response.status = 404;
     ctx.response.headers.set("content-type", "text/html");
+
+    const renderedThing = NotFound({ path: ctx.request.url.pathname });
     ctx.response.body = renderHtml(
-      NotFound({ path: ctx.request.url.pathname }),
+      renderedThing,
     );
   });
 

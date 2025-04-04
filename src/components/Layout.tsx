@@ -1,5 +1,6 @@
 import Head from "./Head.tsx";
 import { VNode } from "preact";
+import { render } from "preact-render-to-string";
 
 export default function Layout(
   {
@@ -7,9 +8,10 @@ export default function Layout(
     children,
   }: {
     accentColor: string;
-    children: VNode | VNode[];
+    children: VNode;
   },
 ) {
+  const renderedBody = render(children);
   return (
     <html lang="en">
       <head>
@@ -38,11 +40,21 @@ export default function Layout(
         <meta name="theme-color" content="#f9b28c" />
 
         <link rel="stylesheet" href="/style.css" />
+        <link
+          rel="stylesheet"
+          href="https://static.katlyn.dev/fonts/lexend/lexend.css"
+        />
+        <link
+          rel="stylesheet"
+          href="https://static.katlyn.dev/fonts/berkeley/berkeley.css"
+        />
 
         {Head.rewind()}
       </head>
-      <body style={`--accent: var(--${accentColor})`}>
-        {children}
+      <body
+        style={`--accent: var(--${accentColor})`}
+        dangerouslySetInnerHTML={{ __html: renderedBody }}
+      >
       </body>
     </html>
   );
