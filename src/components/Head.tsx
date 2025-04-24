@@ -7,7 +7,7 @@ export default class Head extends Component {
   static rewind() {
     const state = mounted.map((mount) => mount.props.children ?? []).flat();
     mounted = [];
-    return state;
+    return <>{state}</>;
   }
 
   override componentWillMount() {

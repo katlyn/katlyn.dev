@@ -8,13 +8,13 @@
     "@std/path": "jsr:@std/path@^1.0.8",
     "@tajpouria/cors": "jsr:@tajpouria/cors@^1.2.1",
     "env-verifier": "npm:env-verifier@^1.5.0",
-    "preact": "npm:preact",
+    "preact": "npm:preact@^10.26.5",
     "preact-render-to-string": "npm:preact-render-to-string@^6.5.13",
     "oak-logger": "https://deno.land/x/oak_logger/mod.ts"
   },
   "tasks": {
-    "dev": "deno run --watch-hmr --allow-net=0.0.0.0,ws.audioscrobbler.com --allow-read=public --allow-env --env-file src/index.ts",
-    "start": "deno run --allow-net=0.0.0.0,ws.audioscrobbler.com --allow-read=public --allow-env --env-file src/index.ts"
+    "dev": "deno run --watch-hmr --allow-net=0.0.0.0,ws.audioscrobbler.com --allow-read=. --allow-env --env-file src/index.ts",
+    "start": "deno run --allow-net=0.0.0.0,ws.audioscrobbler.com --allow-read=. --allow-env --env-file src/index.ts"
   },
   "vendor": true
 }
