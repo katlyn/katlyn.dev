@@ -12,9 +12,9 @@ const PUBLIC_ROOT_PATH = resolve(import.meta.dirname ?? "", "../public");
 export default function build() {
   const router = new Router();
 
-  router.get("/", (ctx) => {
+  router.get("/", async (ctx) => {
     ctx.response.headers.set("content-type", "text/html");
-    ctx.response.body = templateRenderer(Index());
+    ctx.response.body = await templateRenderer(Index());
   });
 
   const app = new Application();
@@ -34,12 +34,12 @@ export default function build() {
     }
   });
 
-  app.use((ctx, _next) => {
+  app.use(async (ctx, _next) => {
     ctx.response.status = 404;
     ctx.response.headers.set("content-type", "text/html");
 
     const renderedThing = NotFound({ path: ctx.request.url.pathname });
-    ctx.response.body = templateRenderer(
+    ctx.response.body = await templateRenderer(
       renderedThing,
     );
   });

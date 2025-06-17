@@ -7,28 +7,28 @@ interface Entity {
 
 const entities: Entity[] = [
   {
-    name: "Shoritsu",
-    url: "https://shoritsu.xyz/",
-  },
-  {
-    name: "Vee",
-    url: "https://vendicated.dev/",
-  },
-  {
     name: "Cadence",
     url: "https://cadence.moe",
-  },
-  {
-    name: "Emma",
-    url: "https://github.com/ghostlydilemma",
   },
   {
     name: "Cass",
     url: "https://dingenskirchen.org/",
   },
   {
+    name: "Emma",
+    url: "https://github.com/ghostlydilemma",
+  },
+  {
+    name: "Hannah",
+    url: "https://hanna.lol/"
+  },
+  {
     name: "Odette",
     url: "http://puppygirl.systems/",
+  },
+  {
+    name: "Shoritsu",
+    url: "https://shoritsu.xyz/",
   },
 ];
 
@@ -36,6 +36,7 @@ const descriptors: string[] = [
   "admirable",
   "curious",
   "cute",
+  "friendy",
   "interesting",
   "neat",
   "notable",

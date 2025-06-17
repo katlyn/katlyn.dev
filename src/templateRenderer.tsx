@@ -1,5 +1,5 @@
 import { VNode } from "preact";
-import { render } from "preact-render-to-string";
+import { renderToStringAsync as render } from "preact-render-to-string";
 import Head from "./components/Head.tsx";
 import { resolve } from "@std/path";
 
@@ -22,9 +22,9 @@ function randomColor() {
   return colors[Math.floor(Math.random() * colors.length)];
 }
 
-export function templateRenderer(page: VNode) {
-  const body = render(page);
-  const head = render(Head.rewind());
+export async function templateRenderer(page: VNode) {
+  const body = await render(page);
+  const head = await render(Head.rewind());
   return template.replace("<!-- TEMPLATE-SLOT-HEAD -->", head)
     .replace("<!-- TEMPLATE-SLOT-BODY -->", body)
     .replace("/* TEMPLATE-SLOT-ACCENT-COLOR */", `--${randomColor()}`);
