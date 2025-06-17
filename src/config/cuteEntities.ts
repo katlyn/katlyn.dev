@@ -19,7 +19,7 @@ const entities: Entity[] = [
     url: "https://github.com/ghostlydilemma",
   },
   {
-    name: "Hannah",
+    name: "Hanna",
     url: "https://hanna.lol/"
   },
   {
