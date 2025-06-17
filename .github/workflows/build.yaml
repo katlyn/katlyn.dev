@@ -3,7 +3,7 @@ name: Build containers
 on:
   push:
     branches:
-      - "2021"
+      - "main"
 
 jobs:
   build:
