@@ -1,4 +1,4 @@
-FROM denoland/deno:alpine-2.2.6
+FROM denoland/deno:alpine-2.3.6
 WORKDIR /katlyn-dev
 EXPOSE 80
 
