@@ -18,7 +18,7 @@ export default function Index() {
       </Head>
 
       <header>
-        <img src="/polyfox.svg" alt="A low poly fox" />
+        <img src="/polyfox.svg" fetchpriority="high" alt="A low poly fox" />
         <h1>katlyn</h1>
         <h2>hi. i do code and stuff.</h2>
       </header>
