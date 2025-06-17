@@ -27,5 +27,5 @@ export function templateRenderer(page: VNode) {
   const head = render(Head.rewind());
   return template.replace("<!-- TEMPLATE-SLOT-HEAD -->", head)
     .replace("<!-- TEMPLATE-SLOT-BODY -->", body)
-    .replace("<!-- TEMPLATE-SLOT-ACCENT-COLOR -->", randomColor());
+    .replace("/* TEMPLATE-SLOT-ACCENT-COLOR */", `--${randomColor()}`);
 }
